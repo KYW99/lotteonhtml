@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>customer main</title>
+    <style>
+        *{margin: 0; padding:0; font-family: "Inter", sans-serif; font-size: 12px; font-weight: 400;}
+        html{color:#111; position:relative;}
+        html, body{height:100%;}
+        ol,ul {list-style: none}
+
+        #wrapper {
+            width: 100%;
+            height: auto;
+            border: 1px solid black;
+        }
+        main {
+            width: 1200px;
+            height: auto;
+            position: relative;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        #container {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        #aside {
+            width: 200px;
+        }
+        #service {
+            flex-grow: 1;
+        }
+        .tit1 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: large;
+            font-weight: bold;
+        }
+        .tit1 span {
+            color: green;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        td { padding: 3px;}
+
+        .notice div {overflow: hidden; border-top: 1px solid black;}
+        .notice h4 {float: left; margin-bottom: 10px; font-size: large; font-weight: bold; }
+        .notice span{float: right;}
+        .notice table {margin: 0 10px; margin-bottom: 10px; width: 1000px;}
+
+
+
+        .qna div {overflow: hidden; border-top: 1px solid black;}
+        .qna h4 {float: left; margin-bottom: 10px; font-size: large; font-weight: bold;}
+        .qna span{float: right;}
+        .qna table {margin: 30px 10px;}
+        .qna table td {width: 5%}
+
+        .question {margin-bottom: 10px;}
+        .question div {overflow: hidden; border-top: 1px solid black;}
+        .question h4 {float: left; margin-bottom: 10px; font-size: large; font-weight: bold; }
+        .question span{float: right; }
+        .question table {margin: 0 10px; margin-bottom: 10px;  width: 1000px;}
+        
+        .onecounsel { border-top: 1px solid black;}
+        .counsel-container {display: flex; overflow: hidden;}
+        .onecounsel h4 {margin-bottom: 10px; font-size: large; font-weight: bold; }
+        .counsel1, .counsel2 {border: 1px solid black; box-sizing: border-box; width: 35%; margin: 0 20px}
+
+        #aside h3 {font-size: large; font-weight: bold; margin: 20px 0;}
+        .aside_list ul li {width: 178px; height: 56px; border-bottom: 1px solid rgb(173, 166, 166); box-sizing: border-box;}
+        .aside_list ul li a{font-size: 16px; padding: 16px 0; line-height: 24px;}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header></header>
+        <main>
+        <div id="container">
+            <div id="aside">
+                <h3>고객센터</h3>
+                <div class="aside_list">
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                        <li><a href="#">문의하기</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="service">
+                <h3 class="tit1">
+                    <span>롯데 ON</span> 이 도와드릴게요 !
+                </h3>
+                
+                <div class="notice">
+                    <div>
+                        <h4>공지사항</h4>
+                        <span><a href="#">전체보기</a></span>
+                    </div>
+                    <table class="notice_table">
+                        <colgroup>
+                            <col style="width: 85%">
+                            <col style="width: 15%">
+                        </colgroup>
+                        <tr class="gggg">
+                            <td>[안내] 해외결제사 창 문자주의</td>
+                            <td>2024.10.31</td>
+                        </tr>
+                        <tr>
+                            <td>[안내] 해외결제사 창 문자주의</td>
+                            <td>2002.10.31</td>
+                        </tr>
+                        <tr>
+                            <td>[안내] 해외결제사 창 문자주의</td>
+                            <td>2000.10.31</td>
+                        </tr>
+                        <tr>
+                            <td>[안내] 해외결제사 창 문자주의</td>
+                            <td>2222.10.31</td>
+                        </tr>
+                        <tr>
+                            <td>[안내] 해외결제사 창 문자주의</td>
+                            <td>2201.10.31</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="qna">
+                    <div>
+                        <h4>자주하는 질문</h4>
+                        <span><a href="#">전체보기</a></span>
+                    </div>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="#"><br>
+                                <a>회원</a>
+                            </td>
+                            <td>
+                                <img src="#"><br>
+                                <a>쿠폰/이벤트</a>
+                            </td>
+                            <td>
+                                <img src="#"><br>
+                                <a>주문/결제</a>
+                            </td>
+                            <td>
+                                <img src="#"><br>
+                                <a>배송</a>
+                            </td>
+                            <td>
+                                <img src="#"><br>
+                                <a>취소/반품/환불</a>
+                            </td>
+                            <td>
+                                <img src="#"><br>
+                                <a>안전결제</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="question">
+                    <div>
+                        <h4>문의하기</h4>
+                        <span><a href="#">전체보기</a></span>
+                    </div>
+                        <table class="question_table">
+                            <colgroup>
+                                <col style="width: 70%">
+                                <col style="width: 15%">
+                                <col style="width: 15%">
+                            </colgroup>
+                        <tr>
+                            <td>[회원] 개인회원과 법인회원에 차이가 있나요?</td>
+                            <td>ckk**</td>
+                            <td>2024.10.10</td>
+                        </tr>
+                        <tr>
+                            <td>[회원] 개인회원과 법인회원에 차이가 있나요?</td>
+                            <td>ckk**</td>
+                            <td>2024.10.10</td>
+                        </tr>
+                        <tr>
+                            <td>[회원] 개인회원과 법인회원에 차이가 있나요?</td>
+                            <td>ckk**</td>
+                            <td>2024.10.10</td>
+                        </tr>
+                        <tr>
+                            <td>[회원] 개인회원과 법인회원에 차이가 있나요?</td>
+                            <td>ckk**</td>
+                            <td>2024.10.10</td>
+                        </tr>
+                        <tr>
+                            <td>[회원] 개인회원과 법인회원에 차이가 있나요?</td>
+                            <td>ckk**</td>
+                            <td>2024.10.10</td>
+                        </tr>
+                    </table>
+                    <a href="#">문의하기 ></a>
+                </div>
+                <div class="onecounsel">
+                    <h4>1:1 상담안내</h4>
+                    <div class="counsel-container">
+                        <div class="counsel1">
+                            <h3><span style="font-size: large; font-weight: bold;">이용안내</span></h3>
+                            <h3>일반회원/비회원</h3>
+                            <h3><span style="font-size: large; font-weight: bold;">1566-0001</span>(평일 09:00~18:00)</h3>
+                            <h3>스마일클럽 전용</h3>
+                            <h3><span style="font-size: large; font-weight: bold;">1566-0002</span>(평일 09:00~18:00)</h3>
+                        </div>
+                        <div class="counsel2">
+                            <h3><span style="font-size: large; font-weight: bold;">판매 상담 이용 안내</span></h3>
+                            <h3>판매고객</h3>
+                            <h3><span style="font-size: large; font-weight: bold;">1566-5700</span>(평일 09:00~18:00)</h3>
+                            <h3><a href="#" style="font-size: large; font-weight: bold;">판매자 가입 서류 접수 안내 ></a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

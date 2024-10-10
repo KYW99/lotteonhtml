@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>일반 회원가입</title>
+    <title>판매자 회원가입</title>
     <style>
         *{
             margin: 0;
             padding: 0;
-            font: normal 12px '돋움';
+            font: normal 12px '고딕';
         }
 
         ul,ol{list-style: none;}
@@ -29,10 +29,10 @@
 
         main {
             position: relative;
-            width: 1063px;
-            height: 900px;
+            width: 1200px;
+            height: 1000px;
             margin: 0 auto;
-            border: 1px solid red;
+            border: 1px solid black;
             box-sizing: border-box;
         }
         
@@ -40,7 +40,7 @@
             position: relative;
             width: 746px;
             height: 30px;
-            top: 10px;
+            top: 30px;
         
             margin: 0 auto;
         }
@@ -61,44 +61,47 @@
 
 
         table {
+            position: relative;
             width: 746px;
+            top: 35px;
             border-collapse: collapse;
             margin: 0 auto;
             margin-top: 30px;
+            border: 1px solid #ccc;
         }
         th, td {
             padding: 10px;
-            border: 1px solid #ccc;
+            
         }
         th {
             width: 153px;
-            height: 46px;
+            height: 30px;
             padding: 10px;
             text-align: left;
             background-color: #f2f2f2;
-            border: 1px solid #ccc;
+            
         }
 
         label {
             font-weight: bold;
         }
-        input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="number"] {
+        input[type="text"], input[type="password"], input[type="BusinessNo"], input[type="tel"], input[type="number"] ,input[type="ObNo"],input[type="fax"] {
             width: 185px;
             height: 20px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        .gender {
-            display: flex;
-            align-items: center;
+        #name{
+            width: 209px;
         }
-        .gender input {
-            margin-right: 5px;
+        #address1, #address2 {
+            width: 380px;
         }
+
         .btn-container {
             text-align: center; /* 가운데 정렬 */
-            margin-top: 20px; /* 위쪽 마진 추가 */
+            margin-top: 50px; /* 위쪽 마진 추가 */
         }
 
         .btn {
@@ -132,7 +135,7 @@
         <main>
             <nav class="registerTop">
                 <div>
-                    <p>일반 회원가입</p>
+                    <p>판매자 회원가입</p>
                 </div>
             </nav>
             <table>
@@ -152,27 +155,29 @@
                
             <table>
             <tr>
-                <th><label for="name">이름</label></th>
-                <td><input type="text" id="name" placeholder="이름입력" required></td>
+                <th><label for="name">회사명</label></th>
+                <td><input type="text" id="name" placeholder="회사명입력 예 ) (주) 다판다" required></td>
             </tr>  
             <tr>
-                <th><label>성별</label></th>
-                <td>
-                    <div class="gender">
-                        <input type="radio" id="male" name="gender" value="남" required>
-                        <label for="male">남</label>
-                        <input type="radio" id="female" name="gender" value="여" required>
-                        <label for="female">여</label>
-                    </div>
-                </td>
+                <th><label for="representative">대표</label></th>
+                <td><input type="text" id="representative" placeholder="이름입력" required></td>
+                    
             </tr>
             <tr>
-                <th><label for="email">EMAIL</label></th>
-                <td><input type="email" id="email" placeholder="이메일입력" required></td>
+                <th><label for="BusinessNo">사업자등록번호</label></th>
+                <td><input type="BusinessNo" id="BusinessNo" placeholder="사업자등록번호입력" required></td>
             </tr>
             <tr>
-                <th><label for="phone">휴대폰</label></th>
-                <td><input type="tel" id="phone" placeholder="휴대폰입력" required></td>
+                <th><label for="ObNo">통신판매업번호</label></th>
+                <td><input type="ObNo" id="ObNo" placeholder="통신판매업번호입력" required></td>
+            </tr>
+            <tr>
+                <th><label for="phone">전화번호</label></th>
+                <td><input type="tel" id="phone" placeholder="전화번호입력" required></td>
+            </tr>
+            <tr>
+                <th><label for="fax">팩스</label></th>
+                <td><input type="fax" id="fax" placeholder="팩스번호입력" required></td>
             </tr>
             <tr>
                 <th><label for="zipcode">주소</label></th>
