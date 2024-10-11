@@ -29,12 +29,15 @@
 
         main {
             width: 1200px;
-            height: 900px;
+            height: auto;
             margin: 0 auto;
             border: 1px solid red;
             box-sizing: border-box;
             overflow: hidden;
+            
         }
+
+
         .info{
             width: 1200px;
             height: 75px;
@@ -75,6 +78,132 @@
             font-size: 16px; /* 값의 크기 조정 */
             font-weight: bold; /* 값 두껍게 */
         }
+        #container{
+            display: flex;
+        }
+
+        aside {
+            float: left;
+            width: 200px;
+            height: auto;
+            border: 1px solid black;
+            display: flex; /* Flexbox 사용 */
+            justify-content: center; /* 수직 중앙 정렬 */
+        }
+
+        aside > ul {
+            padding: 0; /* ul의 기본 패딩 제거 */
+            margin: 0; /* ul의 기본 마진 제거 */
+        }
+
+        aside > ul > li {
+            font-size: 16px;
+            margin: 15px 0; /* 위아래 간격 조정 */
+        }
+        .center {
+            flex-grow: 1;
+            width: 994px;
+            height: 2000px;
+            border: 1px solid black;
+        }
+        .ad{
+            width: 900px;
+            height: 86px;
+            margin: 10px auto;
+            border: 1px solid red;
+            background-color: beige;
+            display: flex;
+            justify-content: center; /* 수평 정렬: flex-start, flex-end, center */
+            align-items: center; /* 수직 정렬: flex-start, flex-end, center */
+            font-size: large;
+            
+        }
+        .details{
+            width: 880px;
+            height: 20px;
+            margin: 0 46px;
+            
+        }
+        .center p{
+            font-size: 14px;
+            font-weight: 700;
+            float: left;
+        }
+        .center a{
+            font-size: 12px;
+            font-weight: 400;
+            float: right;
+        }
+
+        table {
+            width: 880px;
+            height: 133px;
+            margin: 0 46px;
+            border-top: 2px solid black;
+            border-bottom: 1px solid #b4b0b0;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: gray;
+            height: 42.5px;
+        }
+        th:nth-child(1){width: 160px;}
+        th:nth-child(2){width: 530px;}
+        th:nth-child(3){width: 160px;}
+        th:nth-child(4){width: 130px;}
+
+
+
+        .points-table th:nth-child(1) {width: 160px}
+        .points-table th:nth-child(2) {width: 160px}
+        .points-table th:nth-child(3) {width: 160px}
+        .points-table th:nth-child(4) {width: 160px}
+        .points-table th:nth-child(5) {width: 160px}
+        .points-table th:nth-child(6) {width: 160px}
+
+        .tr1{
+            width: auto;
+            height: 170px; 
+            
+        }
+
+
+        td {
+            height: 89px;
+            font-weight: bold;
+            text-align: center;
+                    
+            
+        }
+
+        .eximg > img{
+            width: 128px;
+            height: 124px;
+            float: left;
+            margin-left: 50px   ;
+        }
+        .Pinf {
+            display: flex;               /* Flexbox 사용 */
+            flex-direction: column;      /* 세로 정렬 */
+            align-items: flex-start;     /* 왼쪽 정렬 */
+            justify-content: center;      /* 수직 중앙 정렬 (부모 요소의 높이에 따라 다름) */
+            height: 100px;              /* 필요에 따라 높이 설정 */
+            margin-left: 40px;          /* 왼쪽에 10px 여백 추가 */
+        }
+        td button{
+            position: relative;
+            width: 100px;
+            height: 31px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .custom-button {
+            border: none;
+            background-color: rgb(56, 157, 197);
+            color: white;
+        }
+
 
 
         footer{
@@ -113,6 +242,8 @@
                 </div>
             </div>
 
+   
+        <div id="container">
             <aside>
                 <ul>
                     <li><a href="">전체주문내역</a></li>
@@ -123,6 +254,86 @@
                     <li><a href="">나의설정</a></li>
                 </ul>
             </aside>
+
+            <div class="center">
+                <div class="ad">900x86 배너광고</div>
+
+                <div class="details">
+                    <p>최근주문내역</p>
+                    <a href="">더보기 ></a>
+                </div>
+
+                <table>
+                    <tbody>      
+                        <tr>
+                            <th>날짜</th>
+                            <th>상품정보</th>  
+                            <th>상태</th>  
+                            <th>확인/신청</th>
+
+                        </tr>
+                        <tr class="tr1">
+                            <td><data value="">2023-01-01</data></td>
+                            <td>
+                                <div style="display: flex; align-items: center;">
+                                    <div class="eximg">
+                                        <img src="./img/ch.png" alt="상품 이미지">
+                                    </div>
+                                    <div class="Pinf">
+                                        <p>주문번호: 123456</p>
+                                        <p>회사명: ABC 회사</p>
+                                        <p>수량: 2</p>
+                                        <p>가격: 20,000원</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><data value="">배송완료</data></td>
+                            <td>
+                                <div class="button" style="display: flex; flex-direction: column; gap: 3px; ">
+                                    <button class="custom-button">수취확인</button>
+                                    <button class="custom-button">상품평쓰기</button>
+                                    <button>반품신청</button>
+                                    <button>교환신청</button>
+                                </div>
+                            </td>      
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+                <div style="position: relative; top: 15px;">
+                <div class="details">
+                    <p>포인트적립내역</p>
+                    <a href="">더보기 ></a>
+                </div>
+
+                <table class="points-table">
+                    <tbody>      
+                        <tr>
+                            <th>날짜</th>
+                            <th>구분</th>  
+                            <th>주문번호</th>  
+                            <th>적립번호</th>
+                            <th>비고</th>
+                            <th>유효기간</th>
+
+                        </tr>
+                        <tr class="tr2">
+                            <td><data value="">2022-12-13</data></td>
+                            <td><data value="">적립</data></td>
+                            <td><data value="">2022121001</data></td>    
+                            <td><data value="">340</data></td> 
+                            <td><data value="">상품 구매확정</data></td> 
+                            <td><data value="">2024-12-10</data></td>   
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+        </div>
+  
         
         </main>
         <footer>
