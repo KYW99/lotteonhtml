@@ -83,6 +83,7 @@
         }
 
         aside {
+            
             float: left;
             width: 200px;
             height: auto;
@@ -161,6 +162,26 @@
         .points-table th:nth-child(5) {width: 160px}
         .points-table th:nth-child(6) {width: 160px}
 
+
+        .Review-table th:nth-child(1) {width: 80px}
+        .Review-table th:nth-child(2) {width: 160px}
+        .Review-table th:nth-child(3) {width: 300px}
+        .Review-table th:nth-child(4) {width: 140px}
+        .Review-table th:nth-child(5) {width: 170px}
+
+        .inquiry-table th:nth-child(1) {width: 70px}
+        .inquiry-table th:nth-child(2) {width: 100px}
+        .inquiry-table th:nth-child(3) {width: 100px}
+        .inquiry-table th:nth-child(4) {width: 300px}
+        .inquiry-table th:nth-child(5) {width: 120px}
+        .inquiry-table th:nth-child(6) {width: 90px}
+
+
+        .font{
+            color: white;
+        }
+
+
         .tr1{
             width: auto;
             height: 170px; 
@@ -190,8 +211,15 @@
             height: 100px;              /* 필요에 따라 높이 설정 */
             margin-left: 40px;          /* 왼쪽에 10px 여백 추가 */
         }
-        .Pinf >p{
+        .Pinf >p {
             margin: 5px;
+        }
+
+        .Pinf >a{
+            font-size: 14px;
+            font-weight: 700;
+            margin: 5px;
+            text-decoration: underline;
         }
         td button{
             position: relative;
@@ -206,6 +234,142 @@
             background-color: rgb(56, 157, 197);
             color: white;
         }
+
+        .settings {
+            display: flex;
+            width: 840px;
+            justify-content: space-around;
+            background-color: #f5f7fb;
+            margin: 0 46px;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .setting-item {
+            text-align: left;
+            padding: 0 20px;
+            position: relative;
+            width: auto;
+            
+        }
+        .setting-item2-1{
+            width: 250px;
+            height: 30px;
+        }
+
+        .setting-item2-2{
+            width: 235px;
+            height: 30px;
+        }
+        .setting-item2-3{
+            width: 350px;
+            height: 30px;
+        }
+
+        .setting-item2-1 p , .setting-item2-2 p , .setting-item2-3 p{
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+        }
+        .setting-item2-1-1 p, .setting-item2-2-2 p,  .setting-item2-3-3 p{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            color: #808080;
+        }
+
+
+        .setting-item2-1 a{
+            position: relative;
+            right: 90px;
+            top: 5px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+        }
+        .setting-item2-2 a{
+            position: relative;
+            right: 110px;
+            top: 5px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+        }
+        .setting-item2-3 a{
+            position: relative;
+            right: 220px;
+            top: 5px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+        }
+       
+
+        .setting-item:not(:last-child) {
+            border-right: 2px solid #ccc; /* 수직선 추가 */
+        }
+
+        .setting-item p {
+            margin: 5px 0;
+        }
+
+        .setting-item2-1 a {
+            color: blue;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .setting-item2-2 a {
+            color: blue;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .setting-item2-3 a {
+            color: blue;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .setting-item2-3-3 p:last-child{
+            position: relative;
+            top: 10px;
+            right: 115px;
+        }
+
+        .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 모달 콘텐츠 스타일 */
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* 닫기 버튼 스타일 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 
 
@@ -268,12 +432,11 @@
 
                 <table>
                     <tbody>      
-                        <tr>
+                        <tr class="font">
                             <th>날짜</th>
                             <th>상품정보</th>  
                             <th>상태</th>  
                             <th>확인/신청</th>
-
                         </tr>
                         <tr class="tr1">
                             <td><data value="">2023-01-01</data></td>
@@ -283,8 +446,9 @@
                                         <img src="./img/ch.png" alt="상품 이미지">
                                     </div>
                                     <div class="Pinf">
-                                        <p>주문번호: 123456</p>
-                                        <p>회사명: ABC 회사</p>
+                                        <a href="" id="openModal">주문번호: 123456</a>
+                                        <a href="">회사명: ABC 회사</a>
+                                        <a href="">상품명</a>
                                         <p>수량: 2</p>
                                         <p>가격: 20,000원</p>
                                     </div>
@@ -301,6 +465,7 @@
                             </td>      
                         </tr>
                         
+                        
                     </tbody>
                 </table>
 
@@ -312,7 +477,7 @@
 
                 <table class="points-table">
                     <tbody>      
-                        <tr>
+                        <tr class="font">
                             <th>날짜</th>
                             <th>구분</th>  
                             <th>주문번호</th>  
@@ -332,7 +497,109 @@
                         
                     </tbody>
                 </table>
-            </div>
+                </div>
+                
+                <div style="position: relative; top: 25px;">
+                    <div class="details">
+                        <p>상품평</p>
+                        <a href="">더보기 ></a>
+                    </div>
+    
+                    <table class="Review-table">
+                        <tbody>      
+                            <tr class="font">
+                                <th>번호</th>
+                                <th>상품명</th>  
+                                <th>내용</th>  
+                                <th>평점</th>
+                                <th>작성일</th>
+    
+                            </tr>
+                            <tr class="tr3">
+                                <td><data value="">1</data></td>
+                                <td><data value="">상품번호 / 상품명</data></td>
+                                <td><data value="">배송이 빠릅니다. 잘사용하겠습니다.</data></td>    
+                                <td><data value="">평점</data></td> 
+                                <td><data value="">2022-12-10</data></td> 
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="position: relative; top: 35px;">
+                    <div class="details">
+                        <p>문의내역</p>
+                        <a href="">더보기 ></a>
+                    </div>
+    
+                    <table class="inquiry-table">
+                        <tbody>      
+                            <tr class="font">
+                                <th>번호</th>
+                                <th>문의채널</th>  
+                                <th>문의유형</th>  
+                                <th>제목</th>
+                                <th>작성일</th>
+                                <th>상태</th>
+    
+                            </tr>
+                            <tr class="tr3">
+                                <td><data value="">1</data></td>
+                                <td><data value="">고객센터</data></td>
+                                <td><data value="">주문 /결제</data></td>
+                                <td><data value="">신용카드 결제 중 오류가 난 경우 어떻게 하나요?</data></td>    
+                                <td><data value="">2022-12-12</data></td> 
+                                <td><data value="">검토중</data></td> 
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="position: relative; top: 48px;">
+                    <div class="details">
+                        <p>나의설정</p>
+                    </div>
+
+                    <div class="settings">
+                        <div class="setting-item">
+                            <div class="setting-item2-1">
+                            <p>기본배송지설정</p>
+                            <a href="#">변경</a>
+                            </div>
+                            <div class="setting-item2-1-1">
+                            <p>부산광역시 사하구 다대포로 120<br>한빛빌딩 10층</p>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-item2-2">
+                            <p>Email 설정</p>
+                            <a href="#">변경</a>
+                            </div>
+                            <div class="setting-item2-2-2">
+                            <p class="email">abc123@naver.com</p>
+                            <p>(최종수정일 2021-12-10)</p>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-item2-3">
+                            <p>휴대폰 설정</p>
+                            <a href="#">변경</a>
+                            </div>
+
+                            <div class="setting-item2-3-3">
+                            <p>010 - 1234 - 1001</p><br>
+                            <p>(최종수정일 2021-12-10)</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+                    
+                </div>
+
+                
             </div>
 
         </div>
@@ -343,5 +610,6 @@
 
         </footer>
     </div>
+
 </body>
 </html>

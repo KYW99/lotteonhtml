@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러 모달 예시</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="Pinf">
+    <a href="#" id="openModal1">주문번호: 123456</a>
+    <a href="#" id="openModal2">주문번호: 123457</a>
+    <a href="#" id="openModal3">주문번호: 123458</a>
+    <a href="#" id="openModal4">주문번호: 123459</a>
+    <a href="#" id="openModal5">주문번호: 123460</a>
+</div>
+
+<div id="modal-container"></div> <!-- 모달이 로드될 공간 -->
+
+<script>
+    // 외부 HTML 파일을 불러와 삽입하는 함수
+    function loadModals() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'modal.html', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById('modal-container').innerHTML = xhr.responseText;
+                setupModalListeners();  // 모달이 로드된 후 리스너 설정
+            }
+        };
+        xhr.send();
+    }
+
+    // 모달 열기/닫기 기능 설정 함수
+    function setupModalListeners() {
+        var modals = ['orderModal1', 'orderModal2', 'orderModal3', 'orderModal4', 'orderModal5'];
+        
+        // 모달 열기 리스너 설정
+        modals.forEach(function(modalId, index) {
+            document.getElementById('openModal' + (index + 1)).onclick = function(event) {
+                event.preventDefault();
+                document.getElementById(modalId).style.display = 'block';
+            };
+        });
+
+        // 닫기 버튼 리스너 설정
+        var closeButtons = document.getElementsByClassName('close');
+        for (var i = 0; i < closeButtons.length; i++) {
+            closeButtons[i].onclick = function() {
+                var modalId = this.getAttribute('data-target');
+                document.getElementById(modalId).style.display = 'none';
+            };
+        }
+
+        // 모달 외부 클릭 시 닫기
+        window.onclick = function(event) {
+            modals.forEach(function(modalId) {
+                var modal = document.getElementById(modalId);
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        };
+    }
+
+    // 페이지 로드 후 모달 HTML 불러오기
+    window.onload = function() {
+        loadModals();
+    };
+</script>
+
+<script src="modal.js"></script>
+</body>
+</html>
