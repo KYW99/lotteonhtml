@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지</title>
     <style>
+       
+       
         *{
             margin: 0;
             padding: 0;
@@ -17,24 +19,12 @@
         #wrapper{
             width: 100%;
             height: 100%;
-            border: 1px solid red;
-            box-sizing: border-box;
         }
-
-        header {
-            width: auto;
-            height: 150px;
-        }
-
-
         main {
+            position: relative;
             width: 1200px;
             height: auto;
-            margin: 0 auto;
-            border: 1px solid red;
-            box-sizing: border-box;
-            overflow: hidden;
-            
+            margin: 0 auto;        
         }
 
 
@@ -80,16 +70,17 @@
         }
         #container{
             display: flex;
+            height: auto;
+            flex-wrap: wrap;
         }
 
         aside {
-            
             float: left;
             width: 200px;
             height: auto;
-            border: 1px solid black;
             display: flex; /* Flexbox 사용 */
             justify-content: center; /* 수직 중앙 정렬 */
+            border-right:1px solid #ccc;
         }
 
         aside > ul {
@@ -104,9 +95,10 @@
         .center {
             flex-grow: 1;
             width: 994px;
-            height: 2000px;
-            border: 1px solid black;
+            height: auto;
+            
         }
+
         .ad{
             width: 900px;
             height: 86px;
@@ -137,7 +129,7 @@
         }
 
         table {
-            width: 880px;
+            width: 900px;
             height: 133px;
             margin: 0 46px;
             border-top: 2px solid black;
@@ -148,26 +140,24 @@
             background-color: gray;
             height: 42.5px;
         }
-        th:nth-child(1){width: 160px;}
-        th:nth-child(2){width: 530px;}
-        th:nth-child(3){width: 160px;}
-        th:nth-child(4){width: 130px;}
 
+        th:nth-child(1){width: 140px;}
+        th:nth-child(2){width: 500px;}
+        th:nth-child(3){width: 145px;}
+        th:nth-child(4){width: 115px;}
 
-
-        .points-table th:nth-child(1) {width: 160px}
-        .points-table th:nth-child(2) {width: 160px}
-        .points-table th:nth-child(3) {width: 160px}
-        .points-table th:nth-child(4) {width: 160px}
-        .points-table th:nth-child(5) {width: 160px}
-        .points-table th:nth-child(6) {width: 160px}
-
+        .points-table th:nth-child(1) {width: 150px}
+        .points-table th:nth-child(2) {width: 150px}
+        .points-table th:nth-child(3) {width: 150px}
+        .points-table th:nth-child(4) {width: 150px}
+        .points-table th:nth-child(5) {width: 150px}
+        .points-table th:nth-child(6) {width: 150px}
 
         .Review-table th:nth-child(1) {width: 80px}
-        .Review-table th:nth-child(2) {width: 160px}
+        .Review-table th:nth-child(2) {width: 210px}
         .Review-table th:nth-child(3) {width: 300px}
-        .Review-table th:nth-child(4) {width: 140px}
-        .Review-table th:nth-child(5) {width: 170px}
+        .Review-table th:nth-child(4) {width: 130px}
+        .Review-table th:nth-child(5) {width: 130px}
 
         .inquiry-table th:nth-child(1) {width: 70px}
         .inquiry-table th:nth-child(2) {width: 100px}
@@ -203,6 +193,12 @@
             float: left;
             margin-left: 50px   ;
         }
+        .eximg2 > img{
+            width: 100px;
+            height: 98px;
+            float: left;
+            margin-left: 30px   ;
+        }
         .Pinf {
             display: flex;               /* Flexbox 사용 */
             flex-direction: column;      /* 세로 정렬 */
@@ -220,6 +216,22 @@
             font-weight: 700;
             margin: 5px;
             text-decoration: underline;
+        }
+
+        .Pinf2 {
+            display: flex;               /* Flexbox 사용 */
+            flex-direction: column;      /* 세로 정렬 */
+            align-items: flex-start;     /* 왼쪽 정렬 */
+            justify-content: center;      /* 수직 중앙 정렬 (부모 요소의 높이에 따라 다름) */
+            text-align: center;
+            height: 100px;              /* 필요에 따라 높이 설정 */
+            margin-left: 40px;          /* 왼쪽에 10px 여백 추가 */
+        }
+        .Pinf2 >p {
+            font-size: 12px;
+            font-weight: 400;
+            margin: 5px;
+                
         }
         td button{
             position: relative;
@@ -246,11 +258,10 @@
         }
 
         .setting-item {
-            text-align: left;
-            padding: 0 20px;
             position: relative;
             width: auto;
-            
+            text-align: left;
+            padding: 0 20px;  
         }
         .setting-item2-1{
             width: 250px;
@@ -334,57 +345,16 @@
             top: 10px;
             right: 115px;
         }
-
-        .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* 모달 콘텐츠 스타일 */
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-}
-
-/* 닫기 버튼 스타일 */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-
-        footer{
-            width: auto;
-            height: 150px;
-        }
-        
-
     </style>
+    
+     <link rel="stylesheet" href="/css/reset.css">
+     <link rel="stylesheet" href="/css/common.css">
+
 </head>
 <body>
     <div id="wrapper">
         <header>
-
+            <div id="header"></div>
         </header>
         <main>
             <div class="info">
@@ -446,7 +416,7 @@
                                         <img src="./img/ch.png" alt="상품 이미지">
                                     </div>
                                     <div class="Pinf">
-                                        <a href="" id="openModal">주문번호: 123456</a>
+                                        <a href="">주문번호: 123456</a>
                                         <a href="">회사명: ABC 회사</a>
                                         <a href="">상품명</a>
                                         <p>수량: 2</p>
@@ -464,7 +434,6 @@
                                 </div>
                             </td>      
                         </tr>
-                        
                         
                     </tbody>
                 </table>
@@ -517,7 +486,15 @@
                             </tr>
                             <tr class="tr3">
                                 <td><data value="">1</data></td>
-                                <td><data value="">상품번호 / 상품명</data></td>
+                                <td><data value=""> 
+                                    <div class="eximg2">
+                                        <img src="./img/ch.png" alt="상품 이미지">
+                                    </div>
+                                    <div class="Pinf2">
+                                        <p>상품번호<br> 123456</p>
+                                        <p>상품명<br> 치킨</p>
+                                    </div>
+                                </data></td>
                                 <td><data value="">배송이 빠릅니다. 잘사용하겠습니다.</data></td>    
                                 <td><data value="">평점</data></td> 
                                 <td><data value="">2022-12-10</data></td> 
@@ -557,11 +534,10 @@
                     </table>
                 </div>
 
-                <div style="position: relative; top: 48px;">
+                <div style="position: relative; top: 48px; height: 200px;">
                     <div class="details">
                         <p>나의설정</p>
                     </div>
-
                     <div class="settings">
                         <div class="setting-item">
                             <div class="setting-item2-1">
@@ -595,21 +571,38 @@
                         </div>
                         
                     </div>
-    
-                    
                 </div>
-
-                
             </div>
-
         </div>
-  
-        
         </main>
         <footer>
-
+            <div id="footer"></div>
         </footer>
     </div>
-
 </body>
+<script>
+    fetch('/include/header.html') // 헤더 파일 경로
+   .then(response => {
+     if (!response.ok) {
+       throw new Error('Network response was not ok');
+     }
+     return response.text();
+   })
+   .then(data => {
+     document.getElementById('header').innerHTML = data;
+   })
+   .catch(error => console.error('Error loading header:', error));
+
+   fetch('/include/footer.html')
+   .then(response => {
+     if (!response.ok) {
+       throw new Error('Network response was not ok');
+     }
+     return response.text();
+   })
+   .then(data => {
+     document.getElementById('footer').innerHTML = data;
+   })
+   .catch(error => console.error('Error loading footer:', error));
+ </script>
 </html>

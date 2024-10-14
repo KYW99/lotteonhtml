@@ -1,16 +1,37 @@
-<!-- modal.html -->
-
-<!-- 모달 1 -->
-<div id="orderModal" class="modal">
-    <div class="modal-content">
-        <span class="close" data-target="orderModal1">&times;</span>
-        <div class="bigmodal">
-            <div>
-                <p>주문상세</p>
-                <p>20xx-12-13</p>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>모달 예시</title>
+</head>
+<body>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close" id="closeBtn">&times;</span>
+            <h2>주문상세</h2>
+            <div class="order-info">
+                <h3>주문정보</h3>
+                <p>날짜: 20xx-01-01</p>
+                <p>주문번호: 10122111341</p>
+                <p>상품명: (주) 상품명</p>
+                <p>수량: 1개</p>
+                <p>결제액: 34,000원</p>
             </div>
-
+            <div class="shipping-info">
+                <h3>배송정보</h3>
+                <p>이름: 홍길동</p>
+                <p>연락처: 010-1234-1001</p>
+                <p>주소: [210**] 부산광역시 부산진구 대연동 121 10층 1004호</p>
+                <p>배송요청사항: 없음</p>
+            </div>
         </div>
     </div>
-</div>
 
+    <button id="openModalBtn">모달 열기</button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -17,23 +17,16 @@
         #wrapper{
             width: 100%;
             height: 100%;
-            border: 1px solid red;
             box-sizing: border-box;
         }
 
-        header {
-            width: auto;
-            height: 150px;
-        }
 
 
         main {
             position: relative;
             width: 1200px;
-            height: 900px;
-            margin: 0 auto;
-            border: 1px solid black;
-            box-sizing: border-box;
+            height: 800px;
+            margin: 20px auto;
         }
         
         main .registerTop {
@@ -131,18 +124,16 @@
             background-color: #c9302c;
         }
         
-        footer{
-            width: auto;
-            height: 150px;
-        }
         
 
     </style>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/common.css">
 </head>
 <body>
     <div id="wrapper">
         <header>
-
+            <div id="header"></div>
         </header>
         <main>
             <nav class="registerTop">
@@ -203,8 +194,33 @@
         </div>
         </main>
         <footer>
-
+            <div id="footer"></div>
         </footer>
     </div>
 </body>
+<script>
+    fetch('/include/header.html') // 헤더 파일 경로
+   .then(response => {
+     if (!response.ok) {
+       throw new Error('Network response was not ok');
+     }
+     return response.text();
+   })
+   .then(data => {
+     document.getElementById('header').innerHTML = data;
+   })
+   .catch(error => console.error('Error loading header:', error));
+
+   fetch('/include/footer.html')
+   .then(response => {
+     if (!response.ok) {
+       throw new Error('Network response was not ok');
+     }
+     return response.text();
+   })
+   .then(data => {
+     document.getElementById('footer').innerHTML = data;
+   })
+   .catch(error => console.error('Error loading footer:', error));
+ </script>
 </html>
