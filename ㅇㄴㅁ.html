@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>검색 레이아웃</title>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <th><label for="business-name">상호명</label></th>
+                <td>
+                    <input type="text" id="business-name" placeholder="상호명을 입력하세요">
+                    <input type="text" id="search-input" placeholder="검색어 입력">
+                    <button id="search-btn">검색</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span class="status-icon running">●</span> 운영 중
+                    <span class="status-icon paused">●</span> 운영 중지
+                    <span class="status-icon standby">●</span> 운영 준비
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
