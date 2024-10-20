@@ -31,13 +31,14 @@
 }
 
 #admin_banner_main div {font-weight: bold; margin: 20px auto; width: 900px;}
-.admin_banner_table {width: 900px; border-collapse: collapse; border-top: 1px solid black;}
+.admin_banner_table {width: 900px; border-collapse: collapse;  table-layout: fixed; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);border-top: 1px solid black;}
 .admin_banner_table td, th {border-bottom: 1px solid rgba(172, 172, 172, 0.5); height: 80px; text-align: center;}
-.admin_banner_table th {height: 50px;}
+.admin_banner_table th {height: 50px; background-color: rgb(226, 232, 238);}
 
 #shopsearch {
    width: 95px;
    height: 33px;
+   border-radius: 6px;
 }
 tr a{
 text-decoration: underline;
